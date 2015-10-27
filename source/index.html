@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html ng-app="FoursquareApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="angularjs,SPA,Single Page Application,bootstrap,bootstrap ui,Victor Rios" />
+        <meta name="description" content="Single Page Application built using AngularJS, created by Victor Rios" />
+        <title>Foursquare</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/venuesSearchService.js"></script>
+        <script type="text/javascript" src="js/results.js"></script>
+    </head>
+
+    <body class="main-container" ng-controller="MainController as mainCtrl">
+
+        <header class="main-header">
+            <img src="images/foursquare-logo.png" class="pull-left">
+			<form class="form-inline search-form">
+				<input type="text" class="form-control" ng-model="mainCtrl.place" placeholder="Explore Places In. e.g. Copenhagen" />
+				<input type="text" class="form-control" ng-model="mainCtrl.category" placeholder="Category. e.g. Burger" />
+				<button ng-click="mainCtrl.doExplore()" class="btn btn-primary">Explore</button>
+			</form>
+			
+        </header>
+
+        <div>
+		
+            <ul class="nav of nav-stacked">
+                <li ng-repeat="item in mainCtrl.items">
+
+                    <div class="card">
+                        
+						<p><b>{{item.venue.name}}</b></p>
+							
+						<div ng-style="{'background-color': mainCtrl.getRatingColor(item.venue.ratingColor)}" class="rating-border pull-left">
+							<p class="text-center rating-text">{{item.venue.rating}}</p>
+						</div>
+						
+						<div class="address-text">
+							<p>{{item.venue.location.address}}</p>
+							<p>{{mainCtrl.getCategory(item.venue)}}</p>
+						</div>
+						
+						<div>
+							<img ng-src="{{mainCtrl.buildIconUrl(item.venue)}}" />
+
+							<a class="vcenter" ng-show="{{mainCtrl.showUrl(item.venue.url)}}" href="{{mainCtrl.buildWebSiteUrl(item.venue.url)}}" target="_blank">Web site</a>
+						</div>
+
+                        <div class="pull-right">
+                            <img class="photopreview" ng-src="{{mainCtrl.buildPhotoUrl(item.venue)}}" />
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div>
+            <venue-details></venue-details>
+        </div>
+
+    </body>
+</html>

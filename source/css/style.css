@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto.woff2') format('woff2');
+}
+
+.main-container {
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #F4F6FF;
+}
+
+.main-header {
+    height: 100px;
+    padding: 2px 0px 0px 4px;
+}
+
+.search-form {
+	padding-top:30px;
+}
+
+.card {
+    padding: 2px 3px;
+	height: 132px;
+}
+.card > p, div p {
+	margin: 0px;
+}
+
+.rating-border {
+	border-radius: 4px;
+	margin-top: 4px;
+	margin-right: 10px;
+	width: 50px;
+}
+.rating-text {
+	font-size: 20px;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.photopreview {
+    width: 128px;
+    height: 128px;
+    border-radius: 4px;
+	position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+.of {
+    padding: 6px 0px;
+	margin-left: 4px;
+    max-width: 550px;
+}
+
+.of > li {
+    float: left;
+    border-radius: 4px;
+    background-color: #D5D5D5;
+}
+
+.of > li:hover {
+    background: #92929B;
+}
+
+.of > li.active > a,
+.of > li.active > a:hover,
+.of > li.active > a:focus {
+    color: #252830;
+    background-color: #1ca8dd;
+}
