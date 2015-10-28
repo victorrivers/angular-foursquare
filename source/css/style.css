@@ -3,13 +3,20 @@
     src: url('../fonts/roboto.woff2') format('woff2');
 }
 
-.main-container {
+.main-cont {
     font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #F4F6FF;
 }
 
+.header-cont {
+    width:100%;
+    position:fixed;
+    top:0px;
+	background-color: #F4F6FF;
+	z-index: 1
+}
+
 .main-header {
-    height: 100px;
     padding: 2px 0px 0px 4px;
 }
 
@@ -50,25 +57,31 @@
     right: 2px;
 }
 
-.of {
+.list-cont {
     padding: 6px 0px;
 	margin-left: 4px;
     max-width: 550px;
+	margin-top: 100px;
 }
 
-.of > li {
+.list-cont > li {
     float: left;
     border-radius: 4px;
     background-color: #D5D5D5;
 }
 
-.of > li:hover {
+.list-cont > li:hover {
     background: #92929B;
 }
 
-.of > li.active > a,
-.of > li.active > a:hover,
-.of > li.active > a:focus {
+.list-cont > li:active,
+.list-cont > li:focus {    
+    background-color: #1ca8dd;
+}
+
+.list-cont > li.active > a,
+.list-cont > li.active > a:hover,
+.list-cont > li.active > a:focus {
     color: #252830;
     background-color: #1ca8dd;
 }
