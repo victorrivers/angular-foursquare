@@ -17,14 +17,20 @@
     <body class="main-cont" ng-controller="MainController as mainCtrl">
 		
 		<header class="header-cont">
-			<div class="main-header">
-				<img src="images/foursquare-logo.png" class="pull-left">
-				<form class="form-inline search-form">
-					<input type="text" class="form-control" ng-model="mainCtrl.place" placeholder="Explore Places In. e.g. Copenhagen" />
+			
+			<img src="images/foursquare-logo.png" class="pull-left">
+			<form>
+				<div class="pull-left input-cont">
+					<input type="text" class="form-control " ng-model="mainCtrl.place" placeholder="Explore Places In. e.g. Copenhagen" />
+				</div>
+				<div class="pull-left input-cont">
 					<input type="text" class="form-control" ng-model="mainCtrl.category" placeholder="Category. e.g. Burger" />
+				</div>
+				<div class="pull-left exp-btn">
 					<button ng-click="mainCtrl.doExplore()" class="btn btn-primary">Explore</button>
-				</form>
-			<div>
+				</div>
+			</form>
+			
 		</header>
 		
 		<ul class="nav nav-stacked list-cont">
