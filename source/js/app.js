@@ -1,7 +1,7 @@
 (function () {
     angular.module('FoursquareApp', ['result-directives']);
 
-    angular.module('FoursquareApp').controller('MainController', function (venuesSearchService) {
+    angular.module('FoursquareApp').controller('MainController', function ($scope, venuesSearchService) {
         var controller = this;
 
         controller.items = [];
@@ -61,6 +61,15 @@
 		this.getRatingColor = function(ratingColor) {
 			var color = '#' + ratingColor;
 			return color;
+		}
+		
+		this.setSelectedItem = function(item)
+		{
+			var itemId = item.venue.id;
+			if (itemId != null)
+			{
+				$scope.$emit('selectedItemChanged', itemId);
+			}
 		}
 		
     });

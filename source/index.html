@@ -11,7 +11,8 @@
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/venuesSearchService.js"></script>
-        <script type="text/javascript" src="js/results.js"></script>
+        <script type="text/javascript" src="js/results.js"></script>		
+		<script type="text/javascript" src="js/venuesPhotosService.js"></script>
     </head>
 
     <body class="main-cont" ng-controller="MainController as mainCtrl">
@@ -21,7 +22,7 @@
 			<img src="images/foursquare-logo.png" class="pull-left">
 			<form>
 				<div class="pull-left input-cont">
-					<input type="text" class="form-control " ng-model="mainCtrl.place" placeholder="Explore Places In. e.g. Copenhagen" />
+					<input type="text" class="form-control" ng-model="mainCtrl.place" placeholder="Explore Places In. e.g. Copenhagen" />
 				</div>
 				<div class="pull-left input-cont">
 					<input type="text" class="form-control" ng-model="mainCtrl.category" placeholder="Category. e.g. Burger" />
@@ -32,9 +33,9 @@
 			</form>
 			
 		</header>
-		
+			
 		<ul class="nav nav-stacked list-cont">
-			<li ng-repeat="item in mainCtrl.items">
+			<li ng-repeat="item in mainCtrl.items" ng-click="mainCtrl.setSelectedItem(item)">
 
 				<div class="card">
 					
@@ -60,14 +61,12 @@
 					</div>
 				</div>
 			</li>
-
 		</ul>
-
-        
-
-        <div>
-            <venue-details></venue-details>
-        </div>
+			
+		<div class="presenter-cont">
+			<venue-details></venue-details>
+		</div>
+		
 
     </body>
 </html>

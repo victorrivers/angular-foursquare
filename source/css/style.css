@@ -77,14 +77,19 @@
     background: #92929B;
 }
 
-.list-cont > li:active,
-.list-cont > li:focus {    
-    background-color: #1ca8dd;
-}
-
 .list-cont > li.active > a,
 .list-cont > li.active > a:hover,
 .list-cont > li.active > a:focus {
     color: #252830;
     background-color: #1ca8dd;
+}
+
+.presenter-cont {
+	position: absolute;
+	background-color: #E4E1EF;
+	height: 600px;
+	width: 50%;
+	right: 0px;
+	top: 110px;
+	border-radius: 4px;
 }
