@@ -3,14 +3,18 @@
 
     angular.module('FoursquareApp').controller('MainController', function ($scope, venuesSearchService) {
         var controller = this;
-
+		
         controller.items = [];
 
-        this.category = '';
-        this.place = 'Los Angeles';
-
+        controller.category = '';
+        controller.place = 'Los Angeles';
+		
+		$scope.showPhotos = false;
+		
         this.doExplore = function () {
 
+			$scope.showPhotos = false;
+			
             // Call the async method and then do stuff with what is returned inside our own then function
             venuesSearchService.async(this.category, this.place).then(function (items) {
                 controller.items = items;
@@ -64,11 +68,11 @@
 		}
 		
 		this.setSelectedItem = function(item)
-		{
+		{	
 			var itemId = item.venue.id;
 			if (itemId != null)
-			{
-				$scope.$emit('selectedItemChanged', itemId);
+			{				
+				$scope.$emit('selectedItemChanged', itemId);				
 			}
 		}
 		

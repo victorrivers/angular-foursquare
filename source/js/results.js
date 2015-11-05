@@ -15,10 +15,9 @@
 					venuesPhotosService.async(itemId).then(function (photos) {
 						
 						controller.Photos = photos;
+						
+						$scope.showPhotos = true;
 					});
-					
-					
-					
 				});
 				
 				this.buildPhotoUrl = function (item) {

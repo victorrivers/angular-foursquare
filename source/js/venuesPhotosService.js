@@ -11,11 +11,10 @@ angular.module('FoursquareApp').factory('venuesPhotosService', function($http) {
 		
 		var url = baseUrl + clientId + and + cs + and + version + and + limit;
 		
-		
 		var promise = $http.get(url).then(function (response) {
 		
 		var photos = response.data.response.photos.items;
-		
+				
 		if (photos.length > 0)
 		{
 			return photos;

@@ -1,9 +1,9 @@
-<ul class="nav nav-stacked">
-	<li ng-repeat="photo in venueDetailsCtrl.Photos">
-
-		<div class="pull-left">
-			<img ng-src="{{venueDetailsCtrl.buildPhotoUrl(photo)}}" />
-		</div>
+<div>
+	<div class="row">
+		<div class="col-xs-1 img-cont" ng-repeat="photo in venueDetailsCtrl.Photos">
 		
-	</li>
-</ul>
+			<img ng-src="{{venueDetailsCtrl.buildPhotoUrl(photo)}}" />
+		
+		</div>
+	</div>
+</div>
