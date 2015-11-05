@@ -7,13 +7,14 @@
         controller.items = [];
 
         controller.category = '';
-        controller.place = 'Los Angeles';
+        controller.place = 'Los Angeles';		
 		
 		$scope.showPhotos = false;
 		
         this.doExplore = function () {
 
 			$scope.showPhotos = false;
+			controller.selectedIndex = -1;
 			
             // Call the async method and then do stuff with what is returned inside our own then function
             venuesSearchService.async(this.category, this.place).then(function (items) {
@@ -54,27 +55,27 @@
             if (!url || 0 === url.length)
                 return false;
             return true;
-        }
+        };
 
         this.buildWebSiteUrl = function (url) {
             if (!url || 0 === url.length)
                 return '';
             return url;
-        }
+        };
 
 		this.getRatingColor = function(ratingColor) {
 			var color = '#' + ratingColor;
 			return color;
-		}
+		};
 		
-		this.setSelectedItem = function(item)
-		{	
+		this.setSelectedItem = function(item, index)
+		{
+			this.selectedIndex = index;
 			var itemId = item.venue.id;
 			if (itemId != null)
 			{				
 				$scope.$emit('selectedItemChanged', itemId);				
-			}
-		}
-		
+			}			
+		};
     });
 })();
