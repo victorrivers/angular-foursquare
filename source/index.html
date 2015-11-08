@@ -7,6 +7,7 @@
         <title>Foursquare</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="images/favicon.ico">
 		
         <script type="text/javascript" src="js/angular.min.js"></script>
@@ -42,9 +43,9 @@
 
 							<div class="card">
 								
-								<p class="card-name"><b>{{item.venue.name}}</b></p>
+								<p class="card-name">{{item.venue.name}}</p>
 									
-								<div ng-style="{'background-color': mainCtrl.getRatingColor(item.venue.ratingColor)}" class="rating-border pull-left">
+								<div ng-style="{'background-color': mainCtrl.getRatingColor(item.venue.ratingColor)}" class="rating-border pull-left" ng-hide="{{mainCtrl.hideRating(item.venue.rating)}}">
 									<p class="text-center rating-text">{{item.venue.rating}}</p>
 								</div>
 								
@@ -57,7 +58,7 @@
 
 								<a class="vcenter" ng-show="{{mainCtrl.showUrl(item.venue.url)}}" href="{{mainCtrl.buildWebSiteUrl(item.venue.url)}}" target="_blank">Web site</a>
 							
-								<div class="pull-right">
+								<div class="pull-right" ng-show="{{mainCtrl.showPhotoPreview(item.venue)}}">
 									<img class="photopreview" ng-src="{{mainCtrl.buildPhotoUrl(item.venue)}}" />
 								</div>
 							</div>

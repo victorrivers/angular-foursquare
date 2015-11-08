@@ -1,9 +1,7 @@
-<div>
-	<div class="row">
-		<div class="col-xs-1 img-cont" ng-repeat="photo in venueDetailsCtrl.Photos">
+<ul class="photos-cont">
+	<li class="photo-cont" ng-repeat="photo in venueDetailsCtrl.Photos">
 		
-			<img ng-src="{{venueDetailsCtrl.buildPhotoUrl(photo)}}" />
+		<img class="image-view" ng-src="{{venueDetailsCtrl.buildPhotoUrl(photo)}}" />
 		
-		</div>
-	</div>
-</div>
+	</li>
+</ul>

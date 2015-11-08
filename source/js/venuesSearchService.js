@@ -26,6 +26,11 @@ angular.module('FoursquareApp').factory('venuesSearchService', function($http) {
 			return groups[0].items;
 		}
 		return null;
+	  }, function errorCallback(response) {
+		// called asynchronously if an error occurs
+		// or server returns response with an error status.
+		
+		return null;
 	  });
 	  // Return the promise to the controller
 	  return promise;

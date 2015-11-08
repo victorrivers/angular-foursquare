@@ -7,16 +7,25 @@
 			templateUrl: 'venue-details.html',
 			controller: function($scope, venuesPhotosService){
 				
-				var controller = this;
+				var venueDetailsScope = this;
 				this.Photos = [];
 				
 				$scope.$on('selectedItemChanged', function(event, itemId) {
 					
 					venuesPhotosService.async(itemId).then(function (photos) {
 						
-						controller.Photos = photos;
+						venueDetailsScope.Photos = photos;
 						
-						$scope.showPhotos = true;
+						if (!photos)
+						{
+							$scope.showPhotos = false;
+						}
+						else
+						{
+							$scope.showPhotos = true;
+						}
+						
+						
 					});
 				});
 				
