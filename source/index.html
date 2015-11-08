@@ -53,12 +53,10 @@
 									<p>{{mainCtrl.getCategory(item.venue)}}</p>
 								</div>
 								
-								<div>
-									<img ng-src="{{mainCtrl.buildIconUrl(item.venue)}}" />
+								<img ng-src="{{mainCtrl.buildIconUrl(item.venue)}}" />
 
-									<a class="vcenter" ng-show="{{mainCtrl.showUrl(item.venue.url)}}" href="{{mainCtrl.buildWebSiteUrl(item.venue.url)}}" target="_blank">Web site</a>
-								</div>
-
+								<a class="vcenter" ng-show="{{mainCtrl.showUrl(item.venue.url)}}" href="{{mainCtrl.buildWebSiteUrl(item.venue.url)}}" target="_blank">Web site</a>
+							
 								<div class="pull-right">
 									<img class="photopreview" ng-src="{{mainCtrl.buildPhotoUrl(item.venue)}}" />
 								</div>
