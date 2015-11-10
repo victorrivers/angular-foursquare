@@ -54,7 +54,7 @@ footer {
 }
 
 .card-name {
-	width: 280px;
+	width: 260px;
 }
 
 .rating-border {
@@ -65,6 +65,10 @@ footer {
 }
 .rating-text {
 	font-size: 20px;
+}
+
+.address-text {
+	width: 260px;
 }
 
 .vcenter {
@@ -132,6 +136,7 @@ footer {
 	border-radius: 4px;	
 	height: 200px;
 	width: 200px;
+	margin-bottom: 4px;
 }
 
 .foot-cont {
