@@ -2,10 +2,10 @@
 
 Single Page Application built with AngularJS and Bootstrap.
 
-* [Foursquare API](https://developer.foursquare.com/)
+* <a href="https://developer.foursquare.com/" target="_blank">Foursquare API</a>
   * Search Venues: Returns a list of venues near the current location, optionally matching a search term.
 
-Live application: http://trendreactor.com/foursquare
+Live application: <a href="http://trendreactor.com/foursquare/" target="_blank">http://trendreactor.com/foursquare/</a> 
 
 ##### Created by Victor Rios
 
