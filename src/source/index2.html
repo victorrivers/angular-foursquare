@@ -6,10 +6,13 @@
         <meta name="keywords" content="Foursquare API - Vue.js" />
         <meta name="description" content="Foursquare API - Vue.js" />
         <meta name="author" content="Victor Rios">
+		<meta name="viewport" content="width=device-width">
 		
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		
 		<style>
+			@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
+			
 			html,
 			body {			
 				height: 100%;
@@ -17,6 +20,7 @@
 			}
 			body {
 				margin: 0;
+				font-family: 'Oxygen', sans-serif;
 				background-size: cover;
 				background-image: url(images/bg.jpg);
 				background-position: center;
@@ -24,16 +28,28 @@
 			
 			.main-container {
 				height: 100%;
-				background: #0b7cde9e;
 				display: flex;
     			justify-content: center;
     			align-items: center
 			}
-
-			.search-container {
-				width: 200px;
-				height: 400px;
-				background-color: coral;
+			
+			.input-search {
+				-webkit-appearance: none;
+				font-size: 20px;
+				padding: 10px;
+				border: 0 solid transparent;
+				border-radius: 4px;
+			}
+			
+			.input-search:focus {
+				border-color: #29B6F6;
+				border-width: 4px;
+				outline: none;
+			}
+			
+			.large {
+				font-size: 52px;
+				color: #FFF;
 			}
 		</style>
     </head>
@@ -41,6 +57,8 @@
     <body>
 		<div class="main-container">
 			<div class="search-container">
+				<h1 class="large">FOURSQUARE</h1>
+
 				<input class="input-search" type="search">
 			</div>
 		</div>
